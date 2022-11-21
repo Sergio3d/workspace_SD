@@ -1,0 +1,42 @@
+package Cliente;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class Time implements ITime {
+	
+	public int getHour() {
+
+		int result;
+		try {
+			Socket cs = new Socket("localhost",9999);
+			DataInputStream dis = new DataInputStream(cs.getInputStream());
+			DataOutputStream dos = new DataOutputStream(cs.getOutputStream());
+			dos.writeInt(2);
+			dos.writeInt(1);
+			result = dis.readInt();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		return result;
+		
+	}
+	
+	public int getMinute() {
+		Calendar date = new GregorianCalendar();
+		int minute = date.get(Calendar.MINUTE);
+		return minute;
+	}
+	
+	public int getSeconds() {
+		Calendar date = new GregorianCalendar();
+		int second = date.get(Calendar.SECOND);
+		return second;
+	}
+
+}

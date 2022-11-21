@@ -1,0 +1,46 @@
+
+import java.io.BufferedReader;  
+import java.io.IOException;  
+import java.io. InputStreamReader;  
+import java.io.PrintWriter;  
+import java.net.Socket;
+
+public class clienteEchoTCP{
+	
+	public static void main(String[] args) throws IOException {
+	
+	//Para leer líneas desde el teclado 
+		BufferedReader userInputStream = null;  
+		String userInputLine = null;
+	
+	//Socket para conectarse al servidor de eco 
+		Socket socket = null;
+	
+	//Para escribir líneas de caracteres inmediatamente en la secuencia de entrada de bytes de socket 
+		PrintWriter serverOutputStream = null;
+	
+	//Para facilita rlas líneas g del flujo de entrada de bytes de socket 
+		BufferedReader serverInputStream = null;
+	
+	try {
+	 //1.  Crear un socket para conectarse con el servidor que se ejecuta en localhost:9999
+	 //número arábigo.  
+		
+	 //2.init serverInputStream para vaciar las  fuentes de línea INMEDIATELY
+	 //al sistema operativo después de que  se llame a  WriteLN
+	
+	 //3.  init serverInputStream para  líneas de lectura del servidor
+	
+	
+	//4.  init userInputStream para leer líneas desde el teclado
+	
+	//5.  Leer líneas desde el teclado hasta ctrl-Z de crtl-D para eof
+	
+	//6.  Escribir la línea  en el servidorOutputStream
+	
+	} catch (IOException e) { System.err.println(e.getMessage());  
+		System.exit(1);
+	}
+}
+}
+
